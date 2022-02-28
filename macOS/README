@@ -1,0 +1,24 @@
+1. Download - kafka_2.13-2.7.1.
+
+2. Extract and copy to home directory.
+
+3. Setup a 3-node cluster with server0.properties, server1.properties, server2.properties.
+
+4. Start the Zookeeper node
+➜  kafka_2.13-2.7.1 bin/zookeeper-server-start.sh config/zookeeper.properties
+
+5. Start the kafka brokers
+➜  kafka_2.13-2.7.1 bin/kafka-server-start.sh config/server0.properties
+➜  kafka_2.13-2.7.1 bin/kafka-server-start.sh config/server1.properties
+➜  kafka_2.13-2.7.1 bin/kafka-server-start.sh config/server2.properties
+
+6. Monitor the 3 kafka brokers and zookeeper node
+➜  kafka_2.13-2.7.1 jps
+29905
+28307 Kafka
+31303 Jps
+28671 Kafka
+24959 QuorumPeerMain
+29023 Kafka
+
+QuorumPeerMain is Zookeeper's JVM process label.
